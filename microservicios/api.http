@@ -1,0 +1,118 @@
+### =========================================
+### API Gestor de Historias de Usuario
+### =========================================
+
+
+### Verificar servidor
+GET http://127.0.0.1:8000
+
+
+### =========================================
+### SPRINTS
+### =========================================
+
+### Consultar todos los sprints
+GET http://127.0.0.1:8000/sprints
+
+
+### Consultar sprint por ID
+GET http://127.0.0.1:8000/sprints/1
+
+
+### Crear sprint
+POST http://127.0.0.1:8000/sprints
+Content-Type: application/json
+
+{
+    "nombre": "Sprint 1",
+    "fecha_inicio": "2026-05-20",
+    "fecha_fin": "2026-06-05"
+}
+
+
+### Modificar sprint
+PUT http://127.0.0.1:8000/sprints/1
+Content-Type: application/json
+
+{
+    "nombre": "Sprint Backend",
+    "fecha_inicio": "2026-05-20",
+    "fecha_fin": "2026-06-10"
+}
+
+
+### Eliminar sprint
+DELETE http://127.0.0.1:8000/sprints/1
+
+
+### =========================================
+### HISTORIAS DE USUARIO
+### =========================================
+
+### Consultar todas las historias
+GET http://127.0.0.1:8000/historias
+
+
+### Consultar historia por ID
+GET http://127.0.0.1:8000/historias/1
+
+
+### Crear historia
+POST http://127.0.0.1:8000/historias
+Content-Type: application/json
+
+{
+    "titulo": "Implementar login",
+    "descripcion": "Crear funcionalidad de inicio de sesión",
+    "puntos": 5,
+    "estado": "nueva",
+    "responsable": "Karen",
+    "sprint_id": 1,
+    "fecha_limite": "2026-06-01"
+}
+
+
+### Crear otra historia
+POST http://127.0.0.1:8000/historias
+Content-Type: application/json
+
+{
+    "titulo": "Crear dashboard",
+    "descripcion": "Diseñar dashboard principal",
+    "puntos": 8,
+    "estado": "activa",
+    "responsable": "Juan",
+    "sprint_id": 1,
+    "fecha_limite": "2026-06-03"
+}
+
+
+### Modificar historia
+PUT http://127.0.0.1:8000/historias/1
+Content-Type: application/json
+
+{
+    "titulo": "Implementar login JWT",
+    "descripcion": "Crear autenticación JWT",
+    "puntos": 8,
+    "estado": "activa",
+    "responsable": "Karen Lucia",
+    "sprint_id": 1,
+    "fecha_limite": "2026-06-05"
+}
+
+
+### Eliminar historia
+DELETE http://127.0.0.1:8000/historias/2
+
+
+### =========================================
+### REPORTES
+### =========================================
+
+### Obtener historias de un sprint
+GET http://127.0.0.1:8000/sprints/1/historias
+
+
+### Obtener reporte del sprint
+GET http://127.0.0.1:8000/sprints/1/reporte
